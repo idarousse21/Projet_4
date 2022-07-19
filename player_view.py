@@ -1,5 +1,5 @@
 from datetime import datetime
-import PlayerModel
+import player_model
 
 
 class PlayersView:
@@ -9,7 +9,7 @@ class PlayersView:
         date_of_birth = self.register_date_of_birth()
         gender = self.register_gender()
         ranking = self.register_ranking()
-        player = PlayerModel.PlayersModel(
+        player = player_model.PlayersModel(
             last_name, first_name, date_of_birth, gender, ranking
         )
         return player

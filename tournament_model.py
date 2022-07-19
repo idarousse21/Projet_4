@@ -1,4 +1,6 @@
 import random
+
+
 class TournamentModel:
     def __init__(
         self,
@@ -17,8 +19,6 @@ class TournamentModel:
         self.groupe2 = []
         self.groupe3 = []
         self.groupe4 = []
-        
-        
 
     def __repr__(self):
         return str({
@@ -38,6 +38,3 @@ class TournamentModel:
             self.groupe2.append(random.choice(self.players_list))
             self.groupe3.append(random.choice(self.players_list))
             self.groupe4.append(random.choice(self.players_list))
-
-
-

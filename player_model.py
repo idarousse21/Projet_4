@@ -6,9 +6,8 @@ class PlayersModel:
         self.gender = gender
         self.ranking = ranking
         self.full_name = f"{self.last_name} {self.first_name}"
-        
+
     def __repr__(self):
-        
         return str({
             "last_name": self.last_name,
             "first_name": self.first_name,

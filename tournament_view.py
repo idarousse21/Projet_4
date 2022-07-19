@@ -9,7 +9,7 @@ class TournamentView:
         tournament_start_date = self.register_tournament_start_date()
         tournament_end_date = self.register_tournament_end_date()
         self.display_default_turn()
-        tournament = TournamentModel.TournamentModel(
+        tournament = tournament_model.TournamentModel(
             tournament_name,
             tournament_venue,
             tournament_start_date,
