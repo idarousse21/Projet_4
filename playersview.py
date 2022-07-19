@@ -5,12 +5,15 @@ import PlayerModel
 class PlayersView:
     def register_player(self):
         last_name = self.register_last_name()
-        first_name =self.register_first_name()
+        first_name = self.register_first_name()
         date_of_birth = self.register_date_of_birth()
         gender = self.register_gender()
         ranking = self.register_ranking()
-        player = PlayerModel.PlayersModel(last_name,first_name,date_of_birth,gender, ranking)
+        player = PlayerModel.PlayersModel(
+            last_name, first_name, date_of_birth, gender, ranking
+        )
         return player
+
     @staticmethod
     def register_last_name():
         while True:
