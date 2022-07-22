@@ -3,7 +3,7 @@ import player_model
 
 
 class PlayersView:
-    def register_player(self):
+    def register_player(self) -> str:
         last_name = self.register_last_name()
         first_name = self.register_first_name()
         date_of_birth = self.register_date_of_birth()
@@ -15,7 +15,7 @@ class PlayersView:
         return player
 
     @staticmethod
-    def register_last_name():
+    def register_last_name() -> str:
         while True:
             last_name = input("Enregistrer votre nom: ")
             if not last_name.isalpha():
@@ -24,7 +24,7 @@ class PlayersView:
                 return last_name
 
     @staticmethod
-    def register_first_name():
+    def register_first_name() -> str:
         while True:
             first_name = input("Enregistrer votre prénom: ")
             if not first_name.isalpha():
@@ -33,7 +33,7 @@ class PlayersView:
                 return first_name
 
     @staticmethod
-    def register_date_of_birth():
+    def register_date_of_birth() -> str(int):
         while True:
             date_of_birth = input("Enregistrer votre jour de naissance (jjmmaaaa): ")
             if not date_of_birth.isdigit():
@@ -45,7 +45,7 @@ class PlayersView:
                 return date_of_birth
 
     @staticmethod
-    def register_gender():
+    def register_gender() -> str:
         while True:
             gender = input("Séléctionner homme ou femme pour le choix de votre sexe: ")
             if gender == "homme":
@@ -56,7 +56,7 @@ class PlayersView:
                 print("Genre invalide")
 
     @staticmethod
-    def register_ranking():
+    def register_ranking() -> int:
         while True:
             ranking = input("Entrer votre rang: ")
             if not ranking.isdigit() or ranking <= "0":
