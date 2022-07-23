@@ -5,6 +5,7 @@ class PlayersModel:
         self.date_of_birth = date_of_birth
         self.gender = gender
         self.ranking = ranking
+        self.score = 0
 
     def __repr__(self):
         return str({
@@ -13,4 +14,5 @@ class PlayersModel:
                 "date_of_birth": self.date_of_birth,
                 "gender": self.gender,
                 "ranking": self.ranking,
+                "s"
             })

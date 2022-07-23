@@ -12,13 +12,7 @@ class View:
             tournament.add_player(player)
         tournament.add_player_groupe()
         print((tournament.group_top_ranking))
-        print((tournament.group_bottom_ranking))
-        # # self.tournament.add_player_match()
-        # # print(self.tournament.groupe1)
-        # # print(self.tournament.groupe2)
-        # # print(self.tournament.match1)
-        # print(self.tournament.match2)
-
+        print((tournament.group_bottom_ranking))       
 
 p = View()
 p.launch()
