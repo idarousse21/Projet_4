@@ -8,11 +8,13 @@ class PlayersModel:
         self.score = 0
 
     def __repr__(self):
-        return str({
+        return str(
+            {
                 "last_name": self.last_name,
-                "first_name": self.first_name,
-                "date_of_birth": self.date_of_birth,
-                "gender": self.gender,
+                # "first_name": self.first_name,
+                # "date_of_birth": self.date_of_birth,
+                # "gender": self.gender,
                 "ranking": self.ranking,
-                "s"
-            })
+                "score": self.score,
+            }
+        )

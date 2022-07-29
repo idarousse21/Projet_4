@@ -11,8 +11,10 @@ class View:
             player = players_view.register_player()
             tournament.add_player(player)
         tournament.add_player_groupe()
-        print((tournament.group_top_ranking))
-        print((tournament.group_bottom_ranking))       
+        tournament.round_1()
+        tournament.game_round()
+        print((tournament.melange))
+
 
 p = View()
 p.launch()
