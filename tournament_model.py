@@ -1,7 +1,12 @@
-import itertools
+from tinydb.operations import add
+
+from db import database
 
 
 class TournamentModel:
+
+    DB_TABLE_NAME = "tournaments"
+
     def __init__(
         self,
         tournament_name,
@@ -9,69 +14,49 @@ class TournamentModel:
         tournament_start_date,
         tournament_end_date,
     ):
+        self.id = None
         self.tournament_name = tournament_name
         self.tournament_venue = tournament_venue
         self.tournament_start_date = tournament_start_date
         self.tournament_end_date = tournament_end_date
-        self.number_turns = 4
         self.players_list = []
-        self.group_top_ranking = []
-        self.group_bottom_ranking = []
-        self.match_list = []
-        self.melange = []
-        self.round1 = []
-        self.round2 = []
+        self.rounds = []
+
+        self.tournament_table = database.table(self.DB_TABLE_NAME)
+
+        self.initial_save()
 
     def __repr__(self):
-        return str(
+        return "{self.tournament_name} ({self.tournament_venue})"
+
+    def initial_save(self):
+        self.id = self.tournament_table.insert(
             {
                 "tournament_name": self.tournament_name,
                 "tournament_venue": self.tournament_venue,
                 "tournament_start_date": self.tournament_start_date,
                 "tournament_end_date": self.tournament_end_date,
-                "number_turns": self.number_turns,
+                "players": [],
+                "rounds": [],
             }
         )
 
     def add_player(self, player):
         self.players_list.append(player)
-
-    def add_player_groupe(self):
-        p = sorted(self.players_list, key=lambda players_list: players_list.ranking)
-        for player in p[:2]:
-            self.group_top_ranking.append(player)
-        for player in p[-2:]:
-            self.group_bottom_ranking.append(player)
-
-    def round_1(self):
-        self.group_bottom_ranking = sorted(
-            self.group_bottom_ranking, key=lambda player: player.ranking, reverse=True
+        self.tournament_table.update(
+            add("players", [{"id": player.id}]),
+            doc_ids=[self.id],
         )
-        for player_1, player_2 in itertools.zip_longest(
-            self.group_top_ranking, self.group_bottom_ranking
-        ):
-            self.round1.append((player_1, player_2))
 
-    def game_round(self):
-        # match_list.append(round_now)
-        for i in self.round1:
-            print(i)
-            # self.match_list.append(i)
-            p = input(str(f"résultat match {i} (nom + win, draw): "))
-            print(i[0].last_name)
-            if p == i[0].last_name + " win":
-                print(str(i[0].last_name + " a gagner!"))
-                i[0].update(i[0].score + 1)
-            elif p == str(i[1].last_name + " win"):
-                print(str(i[1].last_name + " a gagner!"))
-                i[1].update(i[1].score + 1)
-            elif p == str("draw"):
-                print("match nul")
-                i[0].update(i[0].score : 0.5)
-                i[1].update(i[1].score + 0.5)
-            self.melange.extend(i)
+    def add_round(self, round_):
+        self.rounds.append(round_)
+        self.tournament_table.update(
+            add("rounds", [{"id": round_.id}]),
+            doc_ids=[self.id],
+        )
 
-        self.melange = sorted(self.melange, key=TournamentModel.tri_list, reverse=True)
-
-    def tri_list(x):
-        return [x["score"], -x["ranking"]]
+    def have_already_played(self, player_1, player_2) -> bool:
+        for round_ in self.rounds:
+            if round_.have_already_played(player_1, player_2):
+                return True
+        return False
