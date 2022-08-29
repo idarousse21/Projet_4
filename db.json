@@ -1,0 +1,250 @@
+{
+    "tournaments": {
+        "1": {
+            "tournament_name": "Paris Game Echec",
+            "tournament_venue": "Paris",
+            "tournament_start_date": "Saturday 27 August 2022",
+            "tournament_end_date": "Sunday 28 August 2022",
+            "players": [
+                {
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                },
+                {
+                    "id": 4
+                },
+                {
+                    "id": 5
+                },
+                {
+                    "id": 6
+                },
+                {
+                    "id": 7
+                },
+                {
+                    "id": 8
+                }
+            ],
+            "rounds": [
+                {
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                },
+                {
+                    "id": 4
+                }
+            ]
+        }
+    },
+    "players": {
+        "1": {
+            "last_name": "imamo",
+            "first_name": "idarousse",
+            "date_of_birth": "14/08/1994",
+            "gender": "Homme",
+            "rank": 1
+        },
+        "2": {
+            "last_name": "hope",
+            "first_name": "solo",
+            "date_of_birth": "09/06/1991",
+            "gender": "Femme",
+            "rank": 2
+        },
+        "3": {
+            "last_name": "roberto",
+            "first_name": "carlos",
+            "date_of_birth": "19/04/1993",
+            "gender": "Homme",
+            "rank": 3
+        },
+        "4": {
+            "last_name": "wendy",
+            "first_name": "renard",
+            "date_of_birth": "29/12/1996",
+            "gender": "Femme",
+            "rank": 4
+        },
+        "5": {
+            "last_name": "zidane",
+            "first_name": "zinedine",
+            "date_of_birth": "31/05/1987",
+            "gender": "Homme",
+            "rank": 5
+        },
+        "6": {
+            "last_name": "lyu",
+            "first_name": "lucie",
+            "date_of_birth": "18/07/1995",
+            "gender": "Femme",
+            "rank": 6
+        },
+        "7": {
+            "last_name": "ronaldo",
+            "first_name": "nazario",
+            "date_of_birth": "31/12/1985",
+            "gender": "Homme",
+            "rank": 7
+        },
+        "8": {
+            "last_name": "roronoa",
+            "first_name": "zoro",
+            "date_of_birth": "15/08/1994",
+            "gender": "Homme",
+            "rank": 8
+        }
+    },
+    "rounds": {
+        "1": {
+            "matches": [
+                {
+                    "id": 1
+                },
+                {
+                    "id": 2
+                },
+                {
+                    "id": 3
+                },
+                {
+                    "id": 4
+                }
+            ]
+        },
+        "2": {
+            "matches": [
+                {
+                    "id": 5
+                },
+                {
+                    "id": 6
+                },
+                {
+                    "id": 7
+                },
+                {
+                    "id": 8
+                }
+            ]
+        },
+        "3": {
+            "matches": [
+                {
+                    "id": 9
+                },
+                {
+                    "id": 10
+                },
+                {
+                    "id": 11
+                },
+                {
+                    "id": 12
+                }
+            ]
+        },
+        "4": {
+            "matches": [
+                {
+                    "id": 13
+                },
+                {
+                    "id": 14
+                },
+                {
+                    "id": 15
+                },
+                {
+                    "id": 16
+                }
+            ]
+        }
+    },
+    "matches": {
+        "1": {
+            "player_1_id": 1,
+            "player_2_id": 8
+        },
+        "2": {
+            "player_1_id": 2,
+            "player_2_id": 7,
+            "winner_id": 7
+        },
+        "3": {
+            "player_1_id": 3,
+            "player_2_id": 6,
+            "winner_id": 3
+        },
+        "4": {
+            "player_1_id": 4,
+            "player_2_id": 5,
+            "winner_id": 5
+        },
+        "5": {
+            "player_1_id": 3,
+            "player_2_id": 5
+        },
+        "6": {
+            "player_1_id": 7,
+            "player_2_id": 1,
+            "winner_id": 1
+        },
+        "7": {
+            "player_1_id": 8,
+            "player_2_id": 2,
+            "winner_id": 8
+        },
+        "8": {
+            "player_1_id": 4,
+            "player_2_id": 6,
+            "winner_id": 6
+        },
+        "9": {
+            "player_1_id": 1,
+            "player_2_id": 3
+        },
+        "10": {
+            "player_1_id": 5,
+            "player_2_id": 8
+        },
+        "11": {
+            "player_1_id": 6,
+            "player_2_id": 7,
+            "winner_id": 7
+        },
+        "12": {
+            "player_1_id": 2,
+            "player_2_id": 4
+        },
+        "13": {
+            "player_1_id": 1,
+            "player_2_id": 3,
+            "winner_id": 3
+        },
+        "14": {
+            "player_1_id": 5,
+            "player_2_id": 7
+        },
+        "15": {
+            "player_1_id": 8,
+            "player_2_id": 6,
+            "winner_id": 8
+        },
+        "16": {
+            "player_1_id": 2,
+            "player_2_id": 4,
+            "winner_id": 4
+        }
+    }
+}
