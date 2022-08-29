@@ -17,9 +17,9 @@
 <p>Pour commencer, vous devez lancer l'invite de commande et employer les commandes suivantes:
     <ol>
             <li>Clonez le projet:<br/>
-                git clone </li>
+                git clone https://github.com/idarousse21/Projet_4.git </li>
             <li>Dirigez-vous sur le dossier cloné:<br/>
-                cd Projet </li>
+                cd Projet_4 </li>
             <li>Créez un environnement virtuel:<br/>
                 python -m venv env</li>
             <li>Puis activation de l'environnement virtuel:<br/>
