@@ -1,7 +1,7 @@
 <h1 align ="center">Explication et lancement du code</h1>
 
 ------------------------------
-<h2 align = "center"> Application </h2>
+<h2 align = "center"> Application et bibliothèques </h2>
 
 <p>
     Pour employer le code, tout d'abord, installez l'application python.
@@ -10,6 +10,17 @@
         <a href = "https://www.python.org/downloads/">Python </a>
     </li>
 </ul>
+</p>
+<p>
+    Nous utiliserons également les bibliothèques python;
+    <ul>
+        <li>
+            <a href = "https://tinydb.readthedocs.io/en/latest/">Tinydb</a>
+        </li>
+        <li>
+            <a href = "https://flake8.pycqa.org/en/latest/">flake8-html</a>
+        </li>
+    </ul>
 </p>
 
 
@@ -27,10 +38,11 @@
                 env\Scripts\activate<br/>
                 Sous Mac/Linus:<br/>
                 source/env/Scripts/activate
+            <li>Configurez la bibliothèque Tinydb:<br/>
+                pip install -r Requirements.txt</li>
             <li>Lancez le logiciel:<br/>
                 python main_view.py</li>
             <li>Pour générer un fichier flake8-html taper sur l'invite de commande:<br/>
-                "pip install flake8-html" pour installer le plug-in<br/>
-                Et "flake8 --format = html --htmldir = flake-rapport" pour créer le rapport</li>
+                "flake8 --format = html --htmldir = flake-rapport" pour créer le rapport</li>
     </ol>
     
