@@ -11,7 +11,6 @@ def is_valid_name(name):
 
 
 class ControllerPlayer:
-
     def __init__(self):
         self.player = None
 
@@ -21,8 +20,7 @@ class ControllerPlayer:
         date_of_birth = self.register_date_of_birth()
         gender = self.register_gender()
         rank = self.register_ranking()
-        self.player = PlayersModel(
-            last_name, first_name, date_of_birth, gender, rank)
+        self.player = PlayersModel(last_name, first_name, date_of_birth, gender, rank)
         return self.player
 
     @staticmethod
@@ -50,8 +48,9 @@ class ControllerPlayer:
             if not len(date_of_birth) == 8 and date_of_birth.isdigit():
                 PlayersView.display_invalid(date_of_birth)
             else:
-                date_of_birth = datetime.strptime(
-                    date_of_birth, "%d%m%Y").strftime("%d/%m/%Y")
+                date_of_birth = datetime.strptime(date_of_birth, "%d%m%Y").strftime(
+                    "%d/%m/%Y"
+                )
                 return date_of_birth
 
     @staticmethod
@@ -84,10 +83,6 @@ class ControllerPlayer:
                 if chang_rank > 0:
                     player.update_ranking(chang_rank)
                     break
-                else:
-                    PlayersView.display_invalid(chang_rank)
-            else:
-                PlayersView.display_invalid(choice_player)
 
     def ranking_all_player(self, choice):
         players_list = sorted(
@@ -110,8 +105,5 @@ class ControllerPlayer:
         player = sorted(players_list, key=lambda player: player[choice])
         player = "\n".join(map(str, players_list))
         PlayersView.display_leaderboard(
-            player.replace("'", "")
-            .replace("}", "")
-            .replace("{", "")
-            .replace(",", "")
+            player.replace("'", "").replace("}", "").replace("{", "").replace(",", "")
         )
